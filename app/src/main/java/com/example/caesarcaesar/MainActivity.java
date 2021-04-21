@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button caesar = findViewById(R.id.caesar);
         Button single = findViewById(R.id.single);
+        Button multi = findViewById(R.id.multi);
 
         caesar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), SingleActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        multi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), MultiActivity.class);
                 startActivity(intent);
             }
         });
