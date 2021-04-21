@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class SingleActivity extends AppCompatActivity {
@@ -29,8 +30,8 @@ public class SingleActivity extends AppCompatActivity {
         Button bokho = findViewById(R.id.bokho);
         Button copy = findViewById(R.id.copy);
 
-        EditText input = findViewById(R.id.input);
-        EditText input2 = findViewById(R.id.input2);
+        final EditText input = findViewById(R.id.input);
+        final EditText input2 = findViewById(R.id.input2);
 
         input.setFilters(new InputFilter[] {filter});
         input2.setFilters(new InputFilter[] {filter});
@@ -41,7 +42,15 @@ public class SingleActivity extends AppCompatActivity {
         amho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String plain_text = input2.getText().toString();
+                plain_text = plain_text.toUpperCase();
+                char plain_arr[] = plain_text.toCharArray();
+                ArrayList<Integer> sub = new ArrayList<Integer>();
+                for (int i = 65 ; i <= 90 ; i++){
+                    sub.add(i);
+                }
+                char[] key = input.getText().toString().toCharArray();
+                single.amho(sub, plain_arr, text);
             }
         });
         bokho.setOnClickListener(new View.OnClickListener() {

@@ -29,24 +29,25 @@ public class MultiActivity extends AppCompatActivity {
         Button bokho = findViewById(R.id.bokho);
         Button copy = findViewById(R.id.copy);
 
-        EditText input = findViewById(R.id.input);
-        EditText input2 = findViewById(R.id.input2);
+        final EditText input = findViewById(R.id.input);
+        final EditText input2 = findViewById(R.id.input2);
 
         input.setFilters(new InputFilter[] {filter});
         input2.setFilters(new InputFilter[] {filter});
 
         final TextView text = findViewById(R.id.text);
+        final Multi multi = new Multi();
 
         amho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                multi.amho(input.getText().toString(), input2.getText().toString(), text);
             }
         });
         bokho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                multi.bokho(input.getText().toString(), input2.getText().toString(), text);
             }
         });
         copy.setOnClickListener(new View.OnClickListener() {
