@@ -7,14 +7,14 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SingleActivity extends AppCompatActivity {
+public class MultiActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_single);
+        setContentView(R.layout.activity_multi);
 
         Button amho = findViewById(R.id.amho);
         Button bokho = findViewById(R.id.bokho);
