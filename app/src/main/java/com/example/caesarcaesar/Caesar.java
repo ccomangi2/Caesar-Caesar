@@ -1,9 +1,6 @@
 package com.example.caesarcaesar;
 
-import android.widget.EditText;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class Caesar {
     public String amho(String s, int n, TextView e) {

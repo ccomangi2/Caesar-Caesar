@@ -1,11 +1,14 @@
 package com.example.caesarcaesar;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +23,7 @@ public class CaesarACtivity extends AppCompatActivity {
 
         Button amho = findViewById(R.id.amho);
         Button bokho = findViewById(R.id.bokho);
+        Button copy = findViewById(R.id.copy);
 
         final EditText input = findViewById(R.id.input);
         final EditText input2 = findViewById(R.id.input2);
@@ -39,6 +43,18 @@ public class CaesarACtivity extends AppCompatActivity {
             public void onClick(View v) {
                 int key = Integer.parseInt(input.getText().toString());
                 c.bokho(input2.getText().toString(), key, text);
+            }
+        });
+        copy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //클립보드 사용 코드
+                ClipboardManager clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("ID", text.getText().toString()); //클립보드에 ID라는 이름표로 id 값을 복사하여 저장
+                clipboardManager.setPrimaryClip(clipData);
+
+                //복사가 되었다면 토스트메시지 노출
+                Toast.makeText(getApplicationContext(),"클립보드에 복사되었습니다.",Toast.LENGTH_SHORT).show();
             }
         });
     }
