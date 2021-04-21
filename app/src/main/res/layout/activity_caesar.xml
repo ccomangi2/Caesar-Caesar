@@ -39,6 +39,8 @@
         android:background="@drawable/edittext"
         android:textSize="23sp"
         android:textColor="#FFF"
+        android:inputType="number"
+        android:digits="0123456789"
         android:fontFamily="@font/regular"
         android:hint="숫자 암호키" />
 

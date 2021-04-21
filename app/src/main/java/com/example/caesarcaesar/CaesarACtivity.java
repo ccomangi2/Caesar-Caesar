@@ -3,6 +3,8 @@ package com.example.caesarcaesar;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -11,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.regex.Pattern;
 
 public class CaesarACtivity extends AppCompatActivity {
 
@@ -27,6 +31,8 @@ public class CaesarACtivity extends AppCompatActivity {
 
         final EditText input = findViewById(R.id.input);
         final EditText input2 = findViewById(R.id.input2);
+
+        input2.setFilters(new InputFilter[] {filter});
 
         final TextView text = findViewById(R.id.text);
         final Caesar c = new Caesar();
@@ -58,4 +64,14 @@ public class CaesarACtivity extends AppCompatActivity {
             }
         });
     }
+    protected InputFilter filter= new InputFilter() {
+        public CharSequence filter(CharSequence source, int start, int end,
+                                   Spanned dest, int dstart, int dend) {
+            Pattern ps = Pattern.compile("^[a-zA-Z0-9]+$");
+            if (!ps.matcher(source).matches()) {
+                return "";
+            }
+            return null;
+        }
+    };
 }
