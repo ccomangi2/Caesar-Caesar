@@ -25,19 +25,20 @@ public class CaesarACtivity extends AppCompatActivity {
         final EditText input2 = findViewById(R.id.input2);
 
         final TextView text = findViewById(R.id.text);
+        final Caesar c = new Caesar();
 
         amho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Caesar c = new Caesar();
                 int key = Integer.parseInt(input.getText().toString());
-                c.solution(input2.getText().toString(), key, text);
+                c.amho(input2.getText().toString(), key, text);
             }
         });
         bokho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                int key = Integer.parseInt(input.getText().toString());
+                c.bokho(input2.getText().toString(), key, text);
             }
         });
     }
