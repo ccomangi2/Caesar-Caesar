@@ -32,7 +32,7 @@ public class CaesarACtivity extends AppCompatActivity {
         final EditText input = findViewById(R.id.input);
         final EditText input2 = findViewById(R.id.input2);
 
-        input2.setFilters(new InputFilter[] {filter});
+//        input2.setFilters(new InputFilter[] {filter});
 
         final TextView text = findViewById(R.id.text);
         final Caesar c = new Caesar();
@@ -64,14 +64,14 @@ public class CaesarACtivity extends AppCompatActivity {
             }
         });
     }
-    protected InputFilter filter= new InputFilter() {
-        public CharSequence filter(CharSequence source, int start, int end,
-                                   Spanned dest, int dstart, int dend) {
-            Pattern ps = Pattern.compile("^[a-zA-Z0-9]+$");
-            if (!ps.matcher(source).matches()) {
-                return "";
-            }
-            return null;
-        }
-    };
+//    protected InputFilter filter= new InputFilter() {
+//        public CharSequence filter(CharSequence source, int start, int end,
+//                                   Spanned dest, int dstart, int dend) {
+//            Pattern ps = Pattern.compile("^[a-zA-Z0-9]+$");
+//            if (!ps.matcher(source).matches()) {
+//                return "";
+//            }
+//            return null;
+//        }
+//    };
 }

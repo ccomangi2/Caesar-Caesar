@@ -17,7 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".CaesarACtivity" />
-        <activity android:name=".SingleActivity" />
         <activity android:name=".MultiActivity" />
     </application>
 

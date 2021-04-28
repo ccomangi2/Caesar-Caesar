@@ -184,7 +184,7 @@ public class Multi {
 
 
         if(oddFlag) decStr = decStr.substring(0,decStr.length()-1);
-		
+
 		/*
 		 //띄어쓰기
 		for(int i = 0 ; i < decStr.length(); i++)

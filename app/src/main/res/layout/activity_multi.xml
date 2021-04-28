@@ -92,7 +92,7 @@
 
     <Button
         android:id="@+id/amho"
-        android:layout_width="150dp"
+        android:layout_width="140dp"
         android:layout_height="70dp"
         android:layout_below="@+id/text"
         android:layout_alignParentStart="true"
@@ -101,12 +101,12 @@
         android:layout_marginTop="40dp"
         android:background="@drawable/copy"
         android:fontFamily="@font/regular"
-        android:textSize="20sp"
-        android:text="암호화" />
+        android:text="암호화"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/bokho"
-        android:layout_width="150dp"
+        android:layout_width="140dp"
         android:layout_height="70dp"
         android:layout_below="@+id/text"
         android:layout_alignParentEnd="true"
